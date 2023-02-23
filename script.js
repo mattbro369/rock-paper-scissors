@@ -1,8 +1,3 @@
-// TODO
-// SET THE GAME TO RESTART 5 TIMES
-// PLAYER CHOICE NEEDS TO BE INSIDE THE PLAYROUND - CHOICE MUST BE MADE EVERY ROUND
-
-
 const rps = ["rock", "paper", "scissors"];
 let computerSelection;
 let computerSelectionFinal; 
@@ -10,6 +5,7 @@ let playerSelection;
 let playerSelectionFinal;
 let playerScore = 0;
 let computerScore = 0;
+let winner = false;
 
 // Computer chooses
 function getComputerChoice() {
@@ -41,16 +37,36 @@ function playRound(playerSelectionFinal, computerSelectionFinal) {
     
 }
 
-// GAME FUNCTION TO REPLAY GAME 5 TIMES
-// GAME MUST KEEP TRACK OF SCORE (CONSOLE.LOG)
-function game(round) {  
-    for (i = 1; i <= 5; i++) {
-    getComputerChoice();
-    getPlayerChoice();
-    playRound(playerSelectionFinal, computerSelectionFinal);
+// Function to print score
+function printScore() {
     console.log(`Player: ${playerScore}`);
     console.log(`Computer: ${computerScore}`);
+    console.log("");
+}
+
+// Function to check score and print if winner 
+function checkScore(playerScore, computerScore) {
+    if (playerScore === 5) {
+        alert("Player wins!");
+        return winner = true;
+    } else if (computerScore === 5) {
+        alert("Computer wins!")
+        return winner = true;
+    } else {
+        return winner;
     }
 }
 
-game();
+// Function to play round until score reaches 5, including all previous declared functions
+function game(round) {
+    do {
+        getComputerChoice();
+        getPlayerChoice();
+        playRound(playerSelectionFinal, computerSelectionFinal);
+        printScore();
+        checkScore(playerScore, computerScore);
+    } while (winner === false)
+}
+
+// Calling game
+game(playRound);
