@@ -1,0 +1,45 @@
+* {
+    margin:  0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    margin: 20px 50px;
+    min-width: 375px;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 48px;    
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7%;
+    flex: 1;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;    
+    margin: 20px 75px;
+}
+
+.buttons-game {
+    width: 150px;
+    height: 150px;
+}
+

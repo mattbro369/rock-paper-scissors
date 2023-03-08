@@ -69,4 +69,4 @@ function game(round) {
 }
 
 // Calling game
-game(playRound);
+// game(playRound);
