@@ -23,6 +23,8 @@ function game() {
     playRound(playerSelection, computerSelection);
     printScore();
     checkScore(playerScore, computerScore);
+  } else {
+    alert("GAME OVER!");
   }
 }
 
@@ -55,8 +57,10 @@ function printScore() {
 
 function checkScore(playerScore, computerScore) {
   if (playerScore === 5) {
+    result.innerText = "Player wins the game!";
     return (winner = true);
   } else if (computerScore === 5) {
+    result.innerText = "Computer wins the game..";
     return (winner = true);
   } else {
     return winner;
