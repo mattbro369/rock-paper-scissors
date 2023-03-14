@@ -6,6 +6,7 @@ let computerScore = 0;
 let winner = false;
 const pVisibleScore = document.getElementById("player-score");
 const cVisibleScore = document.getElementById("computer-score");
+const result = document.getElementById("choices-result");
 
 const btn = document.querySelectorAll(".buttons-game");
 btn.forEach((button) => {
@@ -36,13 +37,13 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
-    console.log(`Player wins, ${playerSelection} beats ${computerSelection}`);
+    result.innerText = `Player wins! ${playerSelection} beats ${computerSelection}`;
     return playerScore++;
   } else if (playerSelection === computerSelection) {
-    console.log("It's a tie!");
+    result.innerText = "It's a tie!";
     return;
   } else {
-    console.log(`Computer wins! ${computerSelection} beats ${playerSelection}`);
+    result.innerText = `Computer wins! ${computerSelection} beats ${playerSelection}`;
     return computerScore++;
   }
 }
