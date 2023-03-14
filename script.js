@@ -4,6 +4,8 @@ let playerSelection;
 let playerScore = 0;
 let computerScore = 0;
 let winner = false;
+const pVisibleScore = document.getElementById("player-score");
+const cVisibleScore = document.getElementById("computer-score");
 
 const btn = document.querySelectorAll(".buttons-game");
 btn.forEach((button) => {
@@ -46,17 +48,14 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function printScore() {
-  console.log(`Player: ${playerScore}`);
-  console.log(`Computer: ${computerScore}`);
-  console.log("");
+  pVisibleScore.innerText = `${playerScore}`;
+  cVisibleScore.innerText = `${computerScore}`;
 }
 
 function checkScore(playerScore, computerScore) {
   if (playerScore === 5) {
-    alert("Player wins!");
     return (winner = true);
   } else if (computerScore === 5) {
-    alert("Computer wins!");
     return (winner = true);
   } else {
     return winner;
